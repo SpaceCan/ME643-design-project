@@ -168,7 +168,7 @@ delete(W)
 l_4=linspace(0,r_4,49);     %[m]
 l_2=linspace(0,r_2,49);     %[m]
 l_5=linspace(0,r_5,49);     %[m]
-%%
+
 [L_2,PHI_2s] = meshgrid(l_2,phi_2s);
 [L_4,PHI_4s] = meshgrid(l_4,phi_4s);
 [L_5,PHI_5s] = meshgrid(l_5,phi_5s);
@@ -194,11 +194,7 @@ A_5y = imag(A_5s);
 A_4x = real(A_4s);
 A_4y = real(A_4s);
 
-
-
-
 %% Dynamic Force Calculations
-
 
 p = 7800; %kg/m^3
 d = .1; %m
@@ -212,7 +208,6 @@ m_6 = 20; %kg
 
 m5 = 1; %N/m
 R = 1000; %N
-
 
 
 f_6x = m_6*A_4x + R;
@@ -377,21 +372,21 @@ surf(L_2,PHI_2s.*180/pi,real(F_2a),"LineWidth",1.5,"EdgeColor","none");
 format3DPlots(gcf,'light','Axial force on member 2','Member length','Crank Angle','Axial force')
 ylim([0 360])
 yticks(0:90:360);
-print('-dpng','-r300')
+%print('-dpng','-r300')
 
 figure('Name','Axial_Force_4');
 surf(L_4,PHI_2s.*180/pi,real(F_4a),"LineWidth",1.5,"EdgeColor","none");
 format3DPlots(gcf,'light','Axial force on member 4','Member length','Crank Angle','Axial force')
 ylim([0 360])
 yticks(0:90:360);
-print('-dpng','-r300')
+%print('-dpng','-r300')
 
 figure('Name','Axial_Force_5');
 surf(L_5,PHI_2s.*180/pi,real(F_5a),"LineWidth",1.5,"EdgeColor","none");
 format3DPlots(gcf,'light','Axial force on member 5','Member length','Crank Angle','Axial force')
 ylim([0 360])
 yticks(0:90:360);
-print('-dpng','-r300')
+%print('-dpng','-r300')
 
 %% Shear plotting
 
@@ -446,19 +441,21 @@ zlim([0 0.5])
 clim([0 0.5])
 ylim([0 360])
 yticks(0:120:360);
-print('-dpng','-r300')
+%print('-dpng','-r300')
+
 figure;
 surf(L_4,PHI_2s.*180/pi,M4,"EdgeColor","none")
 format3DPlots(gcf,'light','Internal Bending Moment for Member 4','Member length','Crank Angle');
 ylim([0 360])
 yticks(0:120:360);
-print('-dpng','-r300')
+%print('-dpng','-r300')
+
 figure;
 surf(L_5,PHI_2s.*180/pi,M5,"EdgeColor","none")
 format3DPlots(gcf,'light','Internal Bending Moment for Member 5','Member length','Crank Angle');
 ylim([0 360])
 yticks(0:120:360);
-print('-dpng','-r300')
+%print('-dpng','-r300')
 
 %% Functions
 function [prettyFig, text_color] = format3DPlots(fig, mode, plottitle, ...
