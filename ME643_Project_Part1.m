@@ -1,5 +1,6 @@
 %% Calculate Positions (Run this before plotting positions)
 clear;clc
+%grahams comment
 % WARNING: REQUIRES SYMBOLIC MATH TOOLBOX
 
 % All lengths are in meters
