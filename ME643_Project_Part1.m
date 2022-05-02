@@ -90,7 +90,7 @@ w_4s = zeros(size(phi_2s));
 w_5s = zeros(size(phi_2s));
 v_xs = zeros(size(phi_2s));
 v_4acs = zeros(size(phi_2s));
-
+% Comment right here
 % Iterate through every value of phi_2. Then evaluate the
 % system of equations at each angle. This finds the velocities.
 W = waitbar(0,'Calulating Velocities'); % User feedback :)
