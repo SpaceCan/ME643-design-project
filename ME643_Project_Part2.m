@@ -72,4 +72,6 @@ S_4m = 0.5*(max(S_4) + min(S_4));
 S_5a = 0.5*(max(S_5) - min(S_5));
 S_5m = 0.5*(max(S_5) + min(S_5));
 
+%% Deflections
+
 
