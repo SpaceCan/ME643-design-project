@@ -197,9 +197,9 @@ A_4y = real(A_4s);
 %% Dynamic Force Calculations
 
 p = 7800; %kg/m^3
-d = .1; %m
-a = 0.05; %m
-b = .2; %m
+d = .1; %m diameters
+a = 0.05; %m height
+b = .2; %m width
 
 m_2 = p*(pi*((d/2)^2)*r_2);%kg
 m_4 = p*(a*b*r_4); %kg
