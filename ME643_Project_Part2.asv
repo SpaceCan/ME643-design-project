@@ -32,7 +32,7 @@ for i = 1:length(f_4(:,1))
     end
 end
 idx4 = find(F_4avg == max(F_4avg));
-S_4 = F_4(:,idx4) ./ Area_4; % Stress on beam 4 at the highest stress loacation
+S_4 = F_4(:,idx4) ./ Area_4; % Stress on beam 2 at the highest stress loacation
 % Beam 5
 for i = 1:length(f_5(:,1))
     for j = 1:length(f_5(1,:))
@@ -41,7 +41,7 @@ for i = 1:length(f_5(:,1))
     end
 end
 idx5 = find(F_5avg == max(F_5avg));
-S_5 = F_5(:,idx5) ./ Area_5; % Stress on beam 5 at the highest stress loacation
+S_5 = F_5(:,idx5) ./ Area_5; % Stress on beam 2 at the highest stress loacation
 
 % PLOT Stress vs Phi for highest stress point of each member
 figure
@@ -51,7 +51,7 @@ plot(phi_2s*(180/pi),S_4)
 figure
 plot(phi_2s*(180/pi),S_5)
 
-% CALCULATE alternating stress (S_a) and mean stress (S_m)
+% CALCULATE S_a and S_m
 % Beam 2
 S_2max = max(S_2);
 S_2min = min(S_2);
