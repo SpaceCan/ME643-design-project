@@ -74,7 +74,7 @@ S_5m = 0.5*(max(S_5) + min(S_5));
 
 %% Deflections
 %Uses code for deliverable 1
-E= 200000*10^(3); %Modulus of elasticity 
+E= 200000e3; %Modulus of elasticity 
 
 %Deflection for member 2
 P5 = sin(aplha2)*f_3x+sin(alpha2)*f_3y;
@@ -87,5 +87,5 @@ delta4 = -(P4*L4^(3))/(48*E*I4);  %Deflection on memeber 4
 
 %Deflection for member 5
 P5 = F_4b;
-delta5 = (P5*L5^(3))/ (3*E*I5;  %Deflection on member 5
+delta5 = (P5*L5^(3))/ (3*E*I5);  %Deflection on member 5
 
