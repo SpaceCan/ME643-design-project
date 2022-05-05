@@ -101,9 +101,9 @@ ycr2 = L2/360;
 ycr4 = L4/360; 
 ycr5 = L5/360; 
 
-Ndeflect2 = ycr2/y2max;
-Ndeflect4 = ycr4/y4max;
-Ndeflect5 = ycr5/y5max;
+N_deflect_2 = ycr2/y2max;
+N_deflect_4 = ycr4/y4max;
+N_deflect_5 = ycr5/y5max;
 
 %% Buckling Analysis
 % Stephen Heirtzler
@@ -122,4 +122,22 @@ I_5 = (pi*d5^4)/64;
 P_cr_buckling_5 = (pi^2*E*I_5)/(r_5^2);
 N_buckling_5 = P_cr_buckling_5/max(mean(F_5a,2),[],"all");
 
+%% Pin tearout and shear analysis
+% Stephen Heirtzler
+%Bearing
+d_pin = 0.02;
 
+A_bearing = pi/4 * d * d_pin;
+
+S_max_bearing = (max(F_4(:,end))/A_bearing);
+N_bearing = 86e6 / S_max_bearing;
+
+%Tearout
+A_tear = ((b-d_pin)*a)^2;
+S_max_tearout = (max(F_4(:,end))/A_tear);
+N_tearout = 86e6 / S_max_tearout;
+
+%Direct shear
+A_shear = pi*(d_pin/2)^2;
+S_max_shear = (max(F_4(:,end)*0.5)/A_shear);
+N_shear = 86e6 / S_max_shear;
