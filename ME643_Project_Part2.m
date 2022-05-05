@@ -105,3 +105,21 @@ Ndeflect2 = ycr2/y2max;
 Ndeflect4 = ycr4/y4max;
 Ndeflect5 = ycr5/y5max;
 
+%% Buckling Analysis
+% Stephen Heirtzler
+E= 200000e3;
+
+% Use eular column buckling formula on each column
+I_2 = (pi*d2^4)/64;
+P_cr_buckling_2 = (pi^2*E*I_2)/(r_2^2);
+N_buckling_2 = P_cr_buckling_2/max(F_2a,[],"all");
+
+I_4 = (b*a^3)/12;
+P_cr_buckling_4 = (pi^2*E*I_4)/(r_4^2);
+N_buckling_4 = P_cr_buckling_4/max(F_4a,[],"all");
+
+I_5 = (pi*d5^4)/64;
+P_cr_buckling_5 = (pi^2*E*I_5)/(r_5^2);
+N_buckling_5 = P_cr_buckling_5/max(F_5a,[],"all");
+
+
