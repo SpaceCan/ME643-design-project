@@ -93,5 +93,10 @@ fig.ToolBar = 'none';
 fig.Units = 'inches';
 fig.Position = [(Inch_SS(3)/2 - (3/2)) (Inch_SS(4)/2 - (3/2)) 3 3];
 
+annotation("arrow",[0.5 0.5],[0.5 0.65],'HeadLength',10,'LineWidth',1)
+annotation("arrow",[0.5 0.65],[0.5 0.5],'HeadLength',10,'LineWidth',1)
+text(0.52,0.65,'$y\prime$','Interpreter','latex')
+text(0.65,0.53,'$x\prime$','Interpreter','latex')
+
 end
 
