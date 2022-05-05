@@ -82,9 +82,9 @@ L5 = 0.2; %[m]
 r2 = d2/2; %radius of member 2
 r5 = d5/2; %radius of member 5
 
-I2 = (pi*r2^(4))/4; %moment of inirtia member 2
-I4 = (a*b^(3))/12; %moment of inirtia member 4
-I5 = (pi*r5^(4))/4; %moment of inirtia member 5
+I2 = (pi*r2^(4))/4; %moment of inertia member 2
+I4 = (a*b^(3))/12; %moment of inertia member 4
+I5 = (pi*r5^(4))/4; %moment of inertia member 5
 
 %Deflection for member 2
 y2max = (m_2*L2^(2))/ (9*sqrt(3)*E*I2);  %Deflection on member 2
@@ -112,14 +112,14 @@ E= 200000e3;
 % Use eular column buckling formula on each column
 I_2 = (pi*d2^4)/64;
 P_cr_buckling_2 = (pi^2*E*I_2)/(r_2^2);
-N_buckling_2 = P_cr_buckling_2/max(F_2a,[],"all");
+N_buckling_2 = P_cr_buckling_2/max(mean(F_2a,2),[],"all");
 
 I_4 = (b*a^3)/12;
 P_cr_buckling_4 = (pi^2*E*I_4)/(r_4^2);
-N_buckling_4 = P_cr_buckling_4/max(F_4a,[],"all");
+N_buckling_4 = P_cr_buckling_4/max(mean(F_4a,2),[],"all");
 
 I_5 = (pi*d5^4)/64;
 P_cr_buckling_5 = (pi^2*E*I_5)/(r_5^2);
-N_buckling_5 = P_cr_buckling_5/max(F_5a,[],"all");
+N_buckling_5 = P_cr_buckling_5/max(mean(F_5a,2),[],"all");
 
 
