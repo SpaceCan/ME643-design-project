@@ -75,17 +75,33 @@ S_5m = 0.5*(max(S_5) + min(S_5));
 %% Deflections
 %Uses code for deliverable 1
 E= 200000e3; %Modulus of elasticity 
+L2 = 0.3; %[m]
+L4 = 1.4; %[m]
+L5 = 0.2; %[m]
+
+r2 = d2/2; %radius of member 2
+r5 = d5/2; %radius of member 5
+
+I2 = (pi*r2^(4))/4; %moment of inirtia member 2
+I4 = (a*b^(3))/12; %moment of inirtia member 4
+I5 = (pi*r5^(4))/4; %moment of inirtia member 5
 
 %Deflection for member 2
-P5 = sin(aplha2)*f_3x+sin(alpha2)*f_3y;
-delta2 = (P2*L2^(3))/ (3*E*I2);  %Deflection on member 2
+y2max = (m_2*L2^(2))/ (9*sqrt(3)*E*I2);  %Deflection on member 2
 
-%P= center load on beam
-P4 = sin(aplha2)*f_2x+sin(alpha2)*f_2y;
-%Deflection for member 4
-delta4 = -(P4*L4^(3))/(48*E*I4);  %Deflection on memeber 4
+% %P= center load on beam
+P4 = m_2;
+% %Deflection for member 4
+y4max = (P4*L4^(3))/(48*E*I4);  %Deflection on memeber 4
 
 %Deflection for member 5
-P5 = F_4b;
-delta5 = (P5*L5^(3))/ (3*E*I5);  %Deflection on member 5
+y5max = (m_5*L5^(2))/ (9*sqrt(3)*E*I5);  %Deflection on member 5
+
+ycr2 = L2/360;
+ycr4 = L4/360; 
+ycr5 = L5/360; 
+
+Ndeflect2 = ycr2/y2max;
+Ndeflect4 = ycr4/y4max;
+Ndeflect5 = ycr5/y5max;
 
